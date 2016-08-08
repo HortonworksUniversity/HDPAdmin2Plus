@@ -165,11 +165,11 @@ Once completed click on the "Hosts" tab and verify that you have 4 hosts/nodes i
 
 First add two additional Zookeepers to your cluster. 
 
-CLick on the "Hosts" tab select node2 Click on the "+Add" button and select Zookeeper Server
+Click on the "Hosts" tab select node2 Click on the "+Add" button and select Zookeeper Server
 
 NEXT
 
-CLick on the "Hosts" tab select node3 Click on the "+Add" button and select Zookeeper Server
+Click on the "Hosts" tab select node3 Click on the "+Add" button and select Zookeeper Server
 
 Select HDFS service and under "Service Actions" click on "Enable HA Namenode"
 
