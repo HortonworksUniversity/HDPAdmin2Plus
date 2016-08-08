@@ -77,3 +77,90 @@ Credentials will be provided for these services by the instructor:
   54.68.246.157  
   ```
   
+  Instructor will provide you with 4 AWS Instances with Public IP addresses and Private IP addresses.
+
+Login to all four of your nodes using ssh client or PuTTy if you are using Microsoft Windows.
+```
+$ ssh –I training-keypairs.pem centos@<YOUR EXTERNAL IP ADDRESS>
+```
+
+Switch users to root
+```
+$ sudo su –
+# 
+```
+Edit the /etc/hosts files and add the following entries
+
+THIS IS A EXAMPLE – YOUR IP WILL BE DIFFERENT
+```
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+172.30.0.137	node1
+172.30.0.34	node2
+172.30.0.35 	node3
+172.30.0.36	node4
+```
+Reset set the hostname on each node – all nodes for example
+
+On first node – 172.30.0.137
+```
+# hostname node1
+```
+On second node – 172.30.0.34
+```
+# hostname node2
+```
+On third node – 172.30.0.35
+```
+# hostname node3
+```
+On forth node – 172.30.0.36
+```
+# hostname node4
+```
+Verify hostname have been updated
+```
+# hostname
+```
+node1
+
+Restart ambary-agent on all nodes
+```
+# ambari-agent restart
+```
+Exit from root on the ambary node – node1
+# exit
+$
+
+Get the blueprint file Multinode.blueprint
+```
+$ wget https://raw.githubusercontent.com/HortonworksUniversity/HDPAdmin2Plus/master/Multinode.blueprint
+```
+Get the cluster template file ThreeNodeCluster.install
+```
+$ wget https://raw.githubusercontent.com/HortonworksUniversity/HDPAdmin2Plus/master/ThreeNodeCluster.install
+```
+Get the host template file AddOneHosts.install
+```
+$ wget https://raw.githubusercontent.com/HortonworksUniversity/HDPAdmin2Plus/master/AddOneHosts.install
+```
+Now you are ready to utilize blueprints to build your cluster
+
+Post the Multinode.blueprint to the Ambari Server
+```
+$ curl -u admin:BadPass#1 -i -H "X-Requested-By: root" -X POST -d @Multinode.blueprint http://node1:8080/api/v1/blueprints/testblueprint1
+```
+Verify the Multonode.blueprint has been accepted by the Ambari Server
+Login to Ambari
+```
+http://<Ambari IP Address>:8080/api/v1/blueprints/testblueprint1
+```
+Now post the cluster template file to start you cluster build
+```
+$ curl -u admin:BadPass#1 -i -H "X-Requested-By: root" -X POST -d @ThreeNodeCluster.install http://node1:8080/api/v1/clusters/horton
+```
+Return to Ambari Web UI, click on dashboard and you should see your cluster build in progress
+
+
+  
