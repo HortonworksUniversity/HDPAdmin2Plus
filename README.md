@@ -152,7 +152,7 @@ Once your initial build is completed the Ambari Dashboard will show installed se
 Post the host template file to add a node to the cluster
 
 ```
-$ curl -u admin:BadPass#1 -i -H "X-Requested-By: root" -X POST -d @AddOneHosts.install http://node1:8080/api/v1/clusters/horton/hosts
+$ curl -u admin:BadPass#1 -i -H "X-Requested-By: root" -X POST -d @AddOneHost.install http://node1:8080/api/v1/clusters/horton/hosts
 ```
 
 The Ambari UI will show a "1 OPS" running, Click on the "OPS" tab at the top and you can monitor the "AddOneHosts" host template that you posted to the Ambari Server
