@@ -55,29 +55,7 @@ Credentials will be provided for these services by the instructor:
 
 - You will see a Ambari's Management Page showing no clusters running. 
 
-#### Finding internal/external hosts
-
-- Following are useful techniques you can use in future labs to find your cluster specific details:
-
-  - From SSH terminal, how can I find internal hostname (aka FQDN) of the node I'm logged into?
-  ```
-  $ hostname -f
-  ip-172-30-0-186.us-west-2.compute.internal  
-  ```
-
-  - From SSH terminal, how can I to find external hostname of the node I'm logged into?
-  ```
-  $ curl icanhazptr.com
-  ec2-52-33-248-70.us-west-2.compute.amazonaws.com 
-  ```
-
-  - From SSH terminal, how can I to find external (public) IP  of the node I'm logged into?
-  ```
-  $ curl icanhazip.com
-  54.68.246.157  
-  ```
-  
-  Instructor will provide you with 4 AWS Instances with Public IP addresses and Private IP addresses.
+- Instructor will provide you with 4 AWS Instances with Public IP addresses and Private IP addresses.
 
 Login to all four of your nodes using ssh client or PuTTy if you are using Microsoft Windows.
 ```
@@ -87,19 +65,20 @@ $ ssh –I training-keypairs.pem centos@<YOUR EXTERNAL IP ADDRESS>
 Switch users to root
 ```
 $ sudo su –
-# 
 ```
-Edit the /etc/hosts files and add the following entries
+# 
 
-THIS IS A EXAMPLE – YOUR IP WILL BE DIFFERENT
+Edit the /etc/hosts files on each node and add the following entries
+
+THIS IS A EXAMPLE – YOUR IP's WILL BE DIFFERENT
 ```
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 
 172.30.0.137	node1
-172.30.0.34	node2
+172.30.0.34	  node2
 172.30.0.35 	node3
-172.30.0.36	node4
+172.30.0.36	  node4
 ```
 Reset set the hostname on each node – all nodes for example
 
@@ -125,13 +104,15 @@ Verify hostname have been updated
 ```
 node1
 
-Restart ambary-agent on all nodes
+Restart ambari-agent on all nodes
 ```
 # ambari-agent restart
 ```
 Exit from root on the ambary node – node1
 # exit
 $
+
+From the Ambari node (node1) download the blueprint, cluster template and host template files for your cluster build
 
 Get the blueprint file Multinode.blueprint
 ```
