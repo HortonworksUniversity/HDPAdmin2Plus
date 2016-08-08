@@ -59,14 +59,6 @@ Credentials will be provided for these services by the instructor:
 
 - Following are useful techniques you can use in future labs to find your cluster specific details:
 
-  - From SSH terminal, how can I find the cluster name?
-  ```
-  #run on ambari node to fetch cluster name via Ambari API
-  PASSWORD=BadPass#1
-  output=`curl -u admin:$PASSWORD -i -H 'X-Requested-By: ambari'  http://localhost:8080/api/v1/clusters`
-  cluster=`echo $output | sed -n 's/.*"cluster_name" : "\([^\"]*\)".*/\1/p'`
-  echo $cluster
-  ```
   - From SSH terminal, how can I find internal hostname (aka FQDN) of the node I'm logged into?
   ```
   $ hostname -f
