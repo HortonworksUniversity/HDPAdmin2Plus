@@ -109,9 +109,10 @@ Restart ambari-agent on all nodes
 # ambari-agent restart
 ```
 Exit from root on the ambary node – node1
+```
 # exit
 $
-
+```
 From the Ambari node (node1) download the blueprint, cluster template and host template files for your cluster build
 
 Get the blueprint file Multinode.blueprint
@@ -143,5 +144,32 @@ $ curl -u admin:BadPass#1 -i -H "X-Requested-By: root" -X POST -d @ThreeNodeClus
 ```
 Return to Ambari Web UI, click on dashboard and you should see your cluster build in progress
 
+Once your initial build is completed the Ambari Dashboard will show installed services on the left panel and their statuses green
 
-  
+Now you are ready to add the four node to your cluster
+
+Post the host template file to add a node to the cluster
+
+```
+$ curl -u admin:BadPass#1 -i -H "X-Requested-By: root" -X POST -d @AddOneHosts.install http://node1:8080/api/v1/clusters/horton/hosts
+```
+
+The Ambari UI will show a "1 OPS" running, Click on the "OPS" tab at the top and you can monitor the "AddOneHosts" host template that you posted to the Ambari Server
+
+Once completed click on the "Hosts" tab and verify that you have 4 hosts/nodes in your cluster.
+
+These next steps are to configure your cluster for the next lab "Rolling Upgrade"
+
+From your HDP Administration I training you will now setup NameNode High Availability and ResourceManager High Availability.
+
+First add two additional Zookeepers to your cluster. 
+CLick on the "Hosts" tab select node2 Click on the "+Add" button and select Zookeeper Server
+NEXT
+CLick on the "Hosts" tab select node3 Click on the "+Add" button and select Zookeeper Server
+
+Select HDFS service and under "Service Actions" click on "Enable HA Namenode"
+
+Select YARN service and under "Service Actions" click on "Enable HA ResourceManager"
+
+Restart all affected services and your cluster is ready for "Rolling Upgrade" lab.
+
