@@ -164,8 +164,11 @@ Once completed click on the "Hosts" tab and verify that you have 4 hosts/nodes i
 #### From your HDP Administration I training you will now setup NameNode High Availability and ResourceManager High Availability.
 
 First add two additional Zookeepers to your cluster. 
+
 CLick on the "Hosts" tab select node2 Click on the "+Add" button and select Zookeeper Server
+
 NEXT
+
 CLick on the "Hosts" tab select node3 Click on the "+Add" button and select Zookeeper Server
 
 Select HDFS service and under "Service Actions" click on "Enable HA Namenode"
