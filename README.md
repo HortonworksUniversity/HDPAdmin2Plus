@@ -75,10 +75,10 @@ Edit the /etc/hosts files on each node and add the following entries
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 
-172.30.0.137  node1
-172.30.0.34   node2
-172.30.0.35   node3
-172.30.0.36   node4
+## 172.30.0.137  node1
+## 172.30.0.34   node2
+## 172.30.0.35   node3
+## 172.30.0.36   node4
 ```
 Reset set the hostname on each node – all nodes for example
 
