@@ -57,7 +57,7 @@ Credentials will be provided for these services by the instructor:
 
 - Instructor will provide you with 4 AWS Instances with Public IP addresses and Private IP addresses.
 
-Login to all four of your nodes using ssh client or PuTTy if you are using Microsoft Windows.
+#### Login to all four of your nodes using ssh client or PuTTy if you are using Microsoft Windows.
 ```
 $ ssh –I training-keypairs.pem centos@<YOUR EXTERNAL IP ADDRESS>
 ```
@@ -70,7 +70,7 @@ $ sudo su –
 
 Edit the /etc/hosts files on each node and add the following entries
 
-THIS IS A EXAMPLE – YOUR IP's WILL BE DIFFERENT
+### THIS IS A EXAMPLE – YOUR IP's WILL BE DIFFERENT
 ```
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
@@ -98,22 +98,22 @@ On forth node – 172.30.0.36
 ```
 # hostname node4
 ```
-Verify hostname have been updated
+Verify hostname have been updated on each node
 ```
 # hostname
 ```
 node1
 
-Restart ambari-agent on all nodes
+Restart ambari-agent on each node
 ```
 # ambari-agent restart
 ```
-Exit from root on the ambary node – node1
+Exit from root on the ambari node – node1
 ```
 # exit
 $
 ```
-From the Ambari node (node1) download the blueprint, cluster template and host template files for your cluster build
+### From the Ambari node (node1) download the blueprint, cluster template and host template files for your cluster build
 
 Get the blueprint file Multinode.blueprint
 ```
@@ -127,7 +127,8 @@ Get the host template file AddOneHosts.install
 ```
 $ wget https://raw.githubusercontent.com/HortonworksUniversity/HDPAdmin2Plus/master/AddOneHosts.install
 ```
-Now you are ready to utilize blueprints to build your cluster
+
+### Now you are ready to utilize blueprints to build your cluster
 
 Post the Multinode.blueprint to the Ambari Server
 ```
@@ -146,7 +147,7 @@ Return to Ambari Web UI, click on dashboard and you should see your cluster buil
 
 Once your initial build is completed the Ambari Dashboard will show installed services on the left panel and their statuses green
 
-Now you are ready to add the four node to your cluster
+### Now you are ready to add the four node to your cluster
 
 Post the host template file to add a node to the cluster
 
@@ -158,9 +159,9 @@ The Ambari UI will show a "1 OPS" running, Click on the "OPS" tab at the top and
 
 Once completed click on the "Hosts" tab and verify that you have 4 hosts/nodes in your cluster.
 
-These next steps are to configure your cluster for the next lab "Rolling Upgrade"
+### These next steps are to configure your cluster for the next lab "Rolling Upgrade"
 
-From your HDP Administration I training you will now setup NameNode High Availability and ResourceManager High Availability.
+#### From your HDP Administration I training you will now setup NameNode High Availability and ResourceManager High Availability.
 
 First add two additional Zookeepers to your cluster. 
 CLick on the "Hosts" tab select node2 Click on the "+Add" button and select Zookeeper Server
