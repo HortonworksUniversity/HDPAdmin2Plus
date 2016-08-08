@@ -125,7 +125,7 @@ $ wget https://raw.githubusercontent.com/HortonworksUniversity/HDPAdmin2Plus/mas
 ```
 Get the host template file AddOneHosts.install
 ```
-$ wget https://raw.githubusercontent.com/HortonworksUniversity/HDPAdmin2Plus/master/AddOneHosts.install
+$ wget https://raw.githubusercontent.com/HortonworksUniversity/HDPAdmin2Plus/master/AddOneHost.install
 ```
 
 ### Now you are ready to utilize blueprints to build your cluster
