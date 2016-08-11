@@ -159,21 +159,5 @@ The Ambari UI will show a "1 OPS" running, Click on the "OPS" tab at the top and
 
 Once completed click on the "Hosts" tab and verify that you have 4 hosts/nodes in your cluster.
 
-### These next steps are to configure your cluster for the next lab "Rolling Upgrade"
-
-#### From your HDP Administration I training you will now setup NameNode High Availability and ResourceManager High Availability.
-
-First add two additional Zookeepers to your cluster. 
-
-Click on the "Hosts" tab select node2 Click on the "+Add" button and select Zookeeper Server
-
-NEXT
-
-Click on the "Hosts" tab select node3 Click on the "+Add" button and select Zookeeper Server
-
-Select HDFS service and under "Service Actions" click on "Enable HA Namenode"
-
-Select YARN service and under "Service Actions" click on "Enable HA ResourceManager"
-
-Restart all affected services and your cluster is ready for "Rolling Upgrade" lab.
+### Now you are ready for the next lab "Rolling Upgrade"
 
