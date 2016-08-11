@@ -5,11 +5,11 @@
     { "name" : "host_group_1",
       "hosts" :[ { "fqdn" : "node1"} ]
       },
-     { "name" : "host_group_2",
-      "hosts" :[ 
-        { "fqdn" : "node2" },
-        { "fqdn" : "node3" }
-      ]
+    { "name" : "host_group_2",
+      "hosts" :[ { "fqdn" : "node2" } ]
+      },
+    { "name" : "host_group_3",
+      "hosts" :[ { "fqdn" : "node3" } ]
     }
   ]
 }
