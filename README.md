@@ -59,7 +59,7 @@ Credentials will be provided for these services by the instructor:
 
 #### Login to all four of your nodes using ssh client or PuTTy if you are using Microsoft Windows.
 ```
-$ ssh –I training-keypairs.pem centos@<YOUR EXTERNAL IP ADDRESS>
+$ ssh –i training-keypairs.pem centos@<YOUR EXTERNAL IP ADDRESS>
 ```
 
 Switch users to root
